@@ -11,8 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Geode SDK
-        uses: geode-sdk/action@main
+      - name: Install Geode CLI
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/geode-sdk/cli/main/install.sh | bash
 
       - name: Build
         run: geode build -p android64
